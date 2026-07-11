@@ -1,0 +1,6 @@
+{
+  "name": "MAPS A.C.",
+  "description": "Medio Ambiente, Productividad y Sociedad A.C. Landing Page",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
