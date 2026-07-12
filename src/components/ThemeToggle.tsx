@@ -1,34 +1,20 @@
 import { Moon, Sun } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useTheme } from '../context/ThemeContext';
 
 export function ThemeToggle() {
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    // Check initial preference
-    if (document.documentElement.classList.contains('dark') || 
-        window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setIsDark(true);
-      document.documentElement.classList.add('dark');
-    }
-  }, []);
-
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-    if (!isDark) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  };
+  const { isDark, toggleTheme } = useTheme();
 
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-      aria-label="Toggle Dark Mode"
+      className="p-2 rounded-full border border-editorial-border hover:bg-white/10 transition-colors text-editorial-text flex items-center justify-center"
+      aria-label={isDark ? "Cambiar a tema claro" : "Cambiar a tema oscuro"}
     >
-      {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+      {isDark ? (
+        <Sun className="w-4 h-4 text-editorial-accent" />
+      ) : (
+        <Moon className="w-4 h-4 text-editorial-accent" />
+      )}
     </button>
   );
 }

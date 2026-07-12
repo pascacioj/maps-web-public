@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { mapsData } from '../data';
 
@@ -75,7 +75,7 @@ export function ContactSection() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
-                className="w-full bg-white/5 border border-white/10 text-xs text-editorial-text p-4 rounded-lg focus:border-editorial-accent outline-none font-body transition-colors"
+                className="w-full bg-editorial-glass border border-editorial-border text-xs text-editorial-text p-4 rounded-lg focus:border-editorial-accent outline-none font-body transition-colors"
               />
               <input
                 type="email"
@@ -83,7 +83,7 @@ export function ContactSection() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full bg-white/5 border border-white/10 text-xs text-editorial-text p-4 rounded-lg focus:border-editorial-accent outline-none font-body transition-colors"
+                className="w-full bg-editorial-glass border border-editorial-border text-xs text-editorial-text p-4 rounded-lg focus:border-editorial-accent outline-none font-body transition-colors"
               />
               <textarea
                 placeholder="Mensaje..."
@@ -91,7 +91,7 @@ export function ContactSection() {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 required
-                className="w-full bg-white/5 border border-white/10 text-xs text-editorial-text p-4 rounded-lg focus:border-editorial-accent outline-none font-body transition-colors resize-none h-32"
+                className="w-full bg-editorial-glass border border-editorial-border text-xs text-editorial-text p-4 rounded-lg focus:border-editorial-accent outline-none font-body transition-colors resize-none h-32"
               ></textarea>
               <button
                 type="submit"

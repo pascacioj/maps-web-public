@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 
 export function MediaSection() {
   return (
-    <section className="py-24 bg-[#121513] border-b border-editorial-border relative overflow-hidden" id="multimedia">
+    <section className="py-24 bg-editorial-bg-secondary border-b border-editorial-border relative overflow-hidden" id="multimedia">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.h2 
@@ -30,7 +30,7 @@ export function MediaSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative rounded-2xl overflow-hidden aspect-video bg-[#121513] border border-white/10 shadow-2xl"
+            className="relative rounded-2xl overflow-hidden aspect-video bg-editorial-bg-secondary border border-editorial-border shadow-2xl"
           >
             <iframe 
               className="absolute inset-0 w-full h-full"
@@ -47,7 +47,7 @@ export function MediaSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative rounded-2xl overflow-hidden aspect-video bg-[#121513] border border-white/10 shadow-2xl"
+            className="relative rounded-2xl overflow-hidden aspect-video bg-editorial-bg-secondary border border-editorial-border shadow-2xl"
           >
             <iframe 
               className="absolute inset-0 w-full h-full"

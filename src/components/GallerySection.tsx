@@ -61,7 +61,7 @@ export function GallerySection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-xl aspect-square bg-editorial-glass border border-white/5"
+              className="group relative overflow-hidden rounded-xl aspect-square bg-editorial-glass border border-editorial-border"
             >
               <img 
                 src={`/images/galeria-${index + 1}.jpg`} 

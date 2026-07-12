@@ -10,7 +10,7 @@ export function Footer() {
           
           <div className="md:col-span-5 lg:col-span-5">
             <a href="#home" className="flex items-center space-x-3 mb-6">
-              <div className="w-6 h-6 bg-editorial-accent rounded-full flex items-center justify-center text-[#0A0D0B] font-bold text-[10px]">
+              <div className="w-6 h-6 bg-editorial-accent rounded-full flex items-center justify-center text-editorial-bg font-bold text-[10px]">
                 M
               </div>
               <span className="font-display text-xl tracking-tight uppercase font-bold italic text-editorial-text">
@@ -39,7 +39,7 @@ export function Footer() {
             <h4 className="text-[10px] uppercase tracking-[0.2em] text-editorial-accent mb-6">Socios Principales</h4>
             <ul className="space-y-3 text-[10px] font-body text-editorial-muted uppercase tracking-wider">
               {mapsData.partners.slice(0, 4).map((partner, idx) => (
-                <li key={idx} className="border-b border-white/5 pb-2 last:border-0">{partner}</li>
+                <li key={idx} className="border-b border-editorial-border pb-2 last:border-0">{partner}</li>
               ))}
             </ul>
           </div>

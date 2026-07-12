@@ -38,7 +38,7 @@ export function ProjectsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-xl bg-editorial-glass border border-white/10 flex flex-col hover:bg-editorial-forest transition-colors"
+              className="group relative overflow-hidden rounded-xl bg-editorial-glass border border-editorial-border flex flex-col hover:bg-editorial-forest transition-colors"
             >
               {/* Image Container */}
               <div className="relative h-64 overflow-hidden border-b border-editorial-border">
@@ -73,7 +73,7 @@ export function ProjectsSection() {
                   {project.description}
                 </p>
                 
-                <div className="mt-auto pt-4 border-t border-white/5 flex items-center text-[10px] uppercase tracking-widest text-editorial-accent font-bold group-hover:text-white transition-colors cursor-pointer">
+                <div className="mt-auto pt-4 border-t border-editorial-border flex items-center text-[10px] uppercase tracking-widest text-editorial-accent font-bold group-hover:text-editorial-text transition-colors cursor-pointer">
                   <span>Ver detalles del proyecto</span>
                   <ExternalLink className="w-3 h-3 ml-2 transform group-hover:translate-x-1 transition-transform" />
                 </div>

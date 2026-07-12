@@ -1,7 +1,10 @@
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
 
 export function Hero() {
+  const { isDark } = useTheme();
+
   return (
     <section id="home" className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden border-b border-editorial-border">
       {/* Background Image with Overlay */}
@@ -22,7 +25,7 @@ export function Hero() {
           className="mb-8"
         >
           <img 
-            src="/logo.png" 
+            src={isDark ? "/logo-white.png" : "/logo.png"} 
             alt="MAPS A.C. Logo" 
             className="h-24 sm:h-32 w-auto object-contain drop-shadow-xl"
           />
