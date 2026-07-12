@@ -1,8 +1,13 @@
+import React from 'react';
 import { motion } from 'motion/react';
 import { mapsData } from '../data';
 import { ExternalLink } from 'lucide-react';
 
-export function ProjectsSection() {
+interface ProjectsSectionProps {
+  onSelectProject: (project: any) => void;
+}
+
+export function ProjectsSection({ onSelectProject }: ProjectsSectionProps) {
   return (
     <section id="projects" className="py-24 bg-editorial-bg border-b border-editorial-border transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,7 +43,8 @@ export function ProjectsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-xl bg-editorial-glass border border-editorial-border flex flex-col hover:bg-editorial-forest transition-colors"
+              onClick={() => onSelectProject(project)}
+              className="group relative overflow-hidden rounded-xl bg-editorial-glass border border-editorial-border flex flex-col hover:bg-editorial-forest transition-colors cursor-pointer"
             >
               {/* Image Container */}
               <div className="relative h-64 overflow-hidden border-b border-editorial-border">
@@ -64,7 +70,7 @@ export function ProjectsSection() {
               {/* Content */}
               <div className="relative flex-1 p-8 bg-transparent transition-colors">
                 <div className="flex flex-col mb-4">
-                  <span className="text-[10px] text-editorial-accent font-bold mb-2">0{index + 1} // {project.period}</span>
+                  <span className="text-[10px] text-editorial-accent font-bold mb-2">0{index + 1}</span>
                   <h3 className="font-display text-2xl text-editorial-text">
                     {project.title}
                   </h3>
@@ -73,7 +79,7 @@ export function ProjectsSection() {
                   {project.description}
                 </p>
                 
-                <div className="mt-auto pt-4 border-t border-editorial-border flex items-center text-[10px] uppercase tracking-widest text-editorial-accent font-bold group-hover:text-editorial-text transition-colors cursor-pointer">
+                <div className="mt-auto pt-4 border-t border-editorial-border flex items-center text-[10px] uppercase tracking-widest text-editorial-accent font-bold group-hover:text-editorial-text transition-colors">
                   <span>Ver detalles del proyecto</span>
                   <ExternalLink className="w-3 h-3 ml-2 transform group-hover:translate-x-1 transition-transform" />
                 </div>
