@@ -1,7 +1,19 @@
+import { useState } from 'react';
 import { motion } from 'motion/react';
 import { mapsData } from '../data';
 
 export function ContactSection() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const subject = encodeURIComponent(`Nuevo mensaje de ${name}`);
+    const body = encodeURIComponent(`Nombre: ${name}\nEmail: ${email}\n\nMensaje:\n${message}`);
+    window.location.href = `mailto:${mapsData.profile.email}?subject=${subject}&body=${body}`;
+  };
+
   return (
     <section id="contact" className="py-24 bg-editorial-bg border-b border-editorial-border transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,20 +68,29 @@ export function ContactSection() {
             className="bg-editorial-forest/30 border border-editorial-border rounded-2xl p-8"
           >
             <h4 className="text-[10px] uppercase tracking-[0.2em] text-editorial-accent mb-6">Contacto Directo</h4>
-            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <input
                 type="text"
                 placeholder="Nombre"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
                 className="w-full bg-white/5 border border-white/10 text-xs text-editorial-text p-4 rounded-lg focus:border-editorial-accent outline-none font-body transition-colors"
               />
               <input
                 type="email"
                 placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
                 className="w-full bg-white/5 border border-white/10 text-xs text-editorial-text p-4 rounded-lg focus:border-editorial-accent outline-none font-body transition-colors"
               />
               <textarea
                 placeholder="Mensaje..."
                 rows={4}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                required
                 className="w-full bg-white/5 border border-white/10 text-xs text-editorial-text p-4 rounded-lg focus:border-editorial-accent outline-none font-body transition-colors resize-none h-32"
               ></textarea>
               <button
