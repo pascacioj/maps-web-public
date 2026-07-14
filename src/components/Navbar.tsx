@@ -19,6 +19,7 @@ export function Navbar() {
     { name: 'Inicio', href: '#home' },
     { name: 'Nosotros', href: '#about' },
     { name: 'Proyectos', href: '#projects' },
+    { name: 'Capacitaciones', href: '#training' },
     { name: 'Galería', href: '#gallery' },
     { name: 'Multimedia', href: '#multimedia' },
     { name: 'Contacto', href: '#contact' },

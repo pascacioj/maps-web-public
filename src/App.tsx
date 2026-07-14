@@ -8,6 +8,7 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { AboutSection } from './components/AboutSection';
 import { ProjectsSection } from './components/ProjectsSection';
+import { TrainingSection } from './components/TrainingSection';
 import { GallerySection } from './components/GallerySection';
 import { MediaSection } from './components/MediaSection';
 import { ContactSection } from './components/ContactSection';
@@ -48,6 +49,7 @@ export default function App() {
             <Hero />
             <AboutSection />
             <ProjectsSection onSelectProject={setSelectedProject} />
+            <TrainingSection />
             <GallerySection />
             <MediaSection />
             <ContactSection />
